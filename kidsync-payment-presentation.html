@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments Industry Vendor Comparative: KidSync</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --base:#F7F6F3;--accent:#4A7C6F;--accent-light:#EAF2F0;--accent-mid:#6B9E92;
+  --text:#1E1E1E;--muted:#6B6B6B;--border:#E0DED8;--white:#FFFFFF;
+  --emma:#7B9EC9;--tyler:#C4956A;--ai:#8B7EC8;--ai-light:#F5F3FF;
+  --warn:#D97B4F;--warn-light:#FDF0E8;--green-soft:#D4EAE6;
+}
+html,body{width:100%;height:100%;background:#1a1a1a;font-family:'Sora',sans-serif;overflow:hidden;}
+.deck{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.slide{display:none;width:1200px;min-height:675px;background:var(--base);border-radius:16px;overflow:hidden;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.5);}
+.slide.active{display:flex;flex-direction:column;}
+.slide-chrome{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
+.chrome-brand{display:flex;align-items:center;gap:8px;}
+.chrome-logo{width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:700;}
+.chrome-title{font-size:13px;font-weight:600;color:var(--text);}
+.chrome-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.chrome-counter{font-size:12px;color:var(--muted);font-weight:500;}
+.slide-body{flex:1;padding:36px 48px;overflow:hidden;display:flex;flex-direction:column;gap:18px;}
+.slide-body.two-col{flex-direction:row;gap:40px;}
+.col{flex:1;display:flex;flex-direction:column;gap:14px;}
+h1{font-size:36px;font-weight:700;color:var(--text);line-height:1.15;}
+h2{font-size:24px;font-weight:700;color:var(--text);line-height:1.2;}
+h3{font-size:15px;font-weight:600;color:var(--text);}
+h4{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}
+p{font-size:13px;color:var(--muted);line-height:1.65;}
+.lede{font-size:16px;color:var(--muted);line-height:1.6;max-width:680px;}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;letter-spacing:0.02em;}
+.tag-accent{background:var(--accent);color:white;}
+.tag-green{background:var(--green-soft);color:var(--accent);}
+.tag-warn{background:var(--warn-light);color:var(--warn);}
+.tag-ai{background:var(--ai-light);color:var(--ai);}
+.tag-muted{background:var(--border);color:var(--muted);}
+.tag-phase1{background:#EAF2F0;color:#4A7C6F;}
+.tag-longterm{background:var(--ai-light);color:var(--ai);}
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 18px;}
+.card-accent{border-left:4px solid var(--accent);}
+.card-warn{border-left:4px solid var(--warn);}
+.card-ai{border-left:4px solid var(--ai);}
+.card-emma{border-left:4px solid var(--emma);}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+.ptable{width:100%;border-collapse:collapse;}
+.ptable th{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;padding:7px 12px;text-align:left;border-bottom:2px solid var(--border);}
+.ptable td{font-size:12px;color:var(--text);padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.ptable tr:last-child td{border-bottom:none;}
+.ptable tr.top-pick td{background:var(--accent-light);}
+.ptable td.rank{font-weight:700;color:var(--accent);width:24px;}
+.ptable td.fit-ex{color:var(--accent);font-weight:600;}
+.ptable td.fit-good{color:var(--emma);font-weight:600;}
+.ptable td.fit-mod{color:var(--muted);font-weight:500;}
+.ptable td.fit-caution{color:var(--warn);font-weight:600;}
+.ptable td.fit-longterm{color:var(--ai);font-weight:600;}
+.ptable td.fit-eco{color:var(--muted);font-style:italic;font-weight:500;}
+.flow-row{display:flex;align-items:center;gap:5px;}
+.flow-box{flex:1;padding:7px 4px;text-align:center;background:var(--white);border:1px solid var(--border);border-radius:7px;font-size:10px;font-weight:600;color:var(--text);}
+.flow-box.active{background:var(--accent-light);border-color:var(--accent);color:var(--accent);}
+.flow-arrow{color:var(--muted);font-size:11px;}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.q-item{display:flex;gap:8px;align-items:flex-start;padding:10px 14px;border-radius:8px;background:var(--white);border:1px solid var(--border);font-size:13px;color:var(--text);line-height:1.5;}
+.q-num{color:var(--accent);font-weight:700;flex-shrink:0;font-size:13px;}
+.checklist{display:flex;flex-direction:column;gap:6px;}
+.check-item{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--text);line-height:1.5;}
+.check-icon{color:var(--accent);font-size:12px;margin-top:1px;flex-shrink:0;}
+.check-icon.warn{color:var(--warn);}
+.cap-list{margin:0;padding-left:14px;}
+.cap-list li{font-size:11px;color:var(--muted);line-height:1.7;}
+.quote-block{border-left:3px solid var(--accent);padding:12px 18px;background:var(--white);border-radius:0 10px 10px 0;}
+.quote-block p{font-family:'Lora',serif;font-style:italic;font-size:13px;color:var(--text);line-height:1.7;}
+.slide-title .slide-body{justify-content:center;gap:20px;}
+.title-eyebrow{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;}
+.nav{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(20,20,20,0.85);backdrop-filter:blur(12px);border-radius:999px;padding:10px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+.nav button{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.7);font-size:18px;padding:4px 8px;border-radius:6px;transition:color .15s,background .15s;font-family:inherit;}
+.nav button:hover{color:white;background:rgba(255,255,255,0.1);}
+.nav-dots{display:flex;gap:5px;}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background .15s,transform .15s;}
+.nav-dot.on{background:#4A7C6F;transform:scale(1.3);}
+.nav-label{font-size:12px;color:rgba(255,255,255,0.4);min-width:44px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- SLIDE 1 -->
+<div class="slide slide-title active" data-slide="1">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync</div><div class="chrome-sub">Payments Industry Vendor Comparative</div></div></div>
+    <div class="chrome-counter">1 / 12</div>
+  </div>
+  <div class="slide-body" style="justify-content:center;gap:28px;padding:60px 80px;">
+    <div class="title-eyebrow">KidSync Payment Project · May 2026</div>
+    <h1 style="font-size:44px;max-width:760px;line-height:1.1;">Payments Industry<br><span style="color:var(--accent);">Vendor Comparative</span></h1>
+    <p class="lede">Top payment ecosystem vendors evaluated through a PayFac lens for KidSync.</p>
+    <div class="pill-row" style="margin-top:8px;">
+      <span class="tag tag-accent">PayFac Lens</span>
+      <span class="tag tag-green">5 Payment Stages</span>
+      <span class="tag tag-green">6 Research Questions</span>
+      <span class="tag tag-muted">Near-Term + Long-Term</span>
+      <span class="tag tag-muted">Minimums &amp; Requirements</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" data-slide="2">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Research Questions</div></div></div>
+    <div class="chrome-counter">2 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div><h4>Framework</h4><h2>6 questions driving this analysis</h2></div>
+    <div class="q-grid">
+      <div class="q-item"><span class="q-num">Q1</span>Who are the top 3 companies involved in each step of the credit card transaction process?</div>
+      <div class="q-item"><span class="q-num">Q2</span>Why are these companies considered the top players in that step?</div>
+      <div class="q-item"><span class="q-num">Q3</span>What makes each company attractive as a potential partner for KidSync?</div>
+      <div class="q-item"><span class="q-num">Q4</span>What are the top 3 features, capabilities, or advantages each company offers that relate to KidSync's PayFac goal?</div>
+      <div class="q-item"><span class="q-num">Q5</span>What types of clients do these companies typically serve, and does KidSync fit their target customer profile?</div>
+      <div class="q-item" style="border-color:var(--accent);background:var(--accent-light);"><span class="q-num">Q6</span>What minimums, fees, volume thresholds, compliance obligations, or partnership conditions does each company have that KidSync would need to meet or validate?</div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);">Analysis runs across 5 stages: Submission · Authorization · Authentication · Clearing · Settlement</p>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" data-slide="3">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Evaluation Lens + Payment Flow</div></div></div>
+    <div class="chrome-counter">3 / 12</div>
+  </div>
+  <div class="slide-body two-col">
+    <div class="col">
+      <h4>PayFac Evaluation Lens</h4>
+      <h2>How vendors were evaluated</h2>
+      <div class="checklist" style="margin-top:4px;">
+        <div class="check-item"><span class="check-icon">✓</span>KidSync may eventually want to operate like a payment facilitator, similar to how Toast owns the payment relationship for restaurants.</div>
+        <div class="check-item"><span class="check-icon">✓</span>Vendors are evaluated by how well they support marketplace payments, provider onboarding, platform fees, payouts, risk controls, and scale.</div>
+        <div class="check-item"><span class="check-icon">✓</span>The goal is to identify strong partner candidates, not to build a full PayFac roadmap.</div>
+        <div class="check-item"><span class="check-icon">✓</span>Each vendor is assessed as: near-term platform partner, long-term infrastructure candidate, or ecosystem context only.</div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Payment Flow: 5 Stages Analyzed</h4>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">1</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--text);">Submission</div><div style="font-size:11px;color:var(--muted);">Card capture + tokenization</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">2</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--text);">Authorization</div><div style="font-size:11px;color:var(--muted);">Issuer approval / decline</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">3</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--text);">Authentication</div><div style="font-size:11px;color:var(--muted);">Cardholder verification + 3DS</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">4</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--text);">Clearing</div><div style="font-size:11px;color:var(--muted);">Transaction reconciliation</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">5</div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--text);">Settlement</div><div style="font-size:11px;color:var(--muted);">Funds movement + payouts</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Submission -->
+<div class="slide" data-slide="4">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync: Stage 1 - Submission</div></div></div>
+    <div class="chrome-counter">4 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+      <div><h4>Stage 1: Submission</h4><h2>Card capture + tokenization</h2></div>
+      <div class="flow-row" style="width:400px;flex-shrink:0;">
+        <div class="flow-box active">Submit</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authorize</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authenticate</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Clear</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Settle</div>
+      </div>
+    </div>
+    <table class="ptable">
+      <thead><tr><th>#</th><th>Company</th><th>PayFac Role</th><th>Top 3 Capabilities</th><th>Client Fit</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr class="top-pick">
+          <td class="rank">1</td>
+          <td><strong>Stripe</strong><br><span style="font-size:10px;color:var(--muted);">Stripe.js + Connect</span></td>
+          <td><span class="tag tag-phase1" style="font-size:10px;">Near-Term</span></td>
+          <td><ul class="cap-list"><li>Stripe.js/Elements tokenization, which reduces PCI scope</li><li>Connect marketplace + sub-merchant onboarding</li><li>Saved cards, Link wallet, mobile SDKs</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">SaaS, marketplaces, platforms. KidSync fits well.</td>
+          <td class="fit-ex">Excellent Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><strong>Adyen</strong><br><span style="font-size:10px;color:var(--muted);">Adyen for Platforms</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Near / Long-Term</span></td>
+          <td><ul class="cap-list"><li>Network tokens (Visa/MC), durable with higher auth rates</li><li>Tokenize → clear → settle in one unified platform</li><li>Direct acquiring: global coverage, enterprise scale</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms and marketplaces. KidSync fits at scale.</td>
+          <td class="fit-good">Good Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><strong>Braintree</strong><br><span style="font-size:10px;color:var(--muted);">PayPal / Venmo</span></td>
+          <td><span class="tag tag-warn" style="font-size:10px;">Validate First</span></td>
+          <td><ul class="cap-list"><li>PayPal + Venmo checkout, providing a parent trust layer</li><li>Braintree Vault: secure card + payment method storage</li><li>Drop-in UI + mobile SDKs</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">eCommerce, apps. Marketplace recurring must be validated.</td>
+          <td class="fit-caution">Validate First</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 5: Authorization -->
+<div class="slide" data-slide="5">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync: Stage 2 - Authorization</div></div></div>
+    <div class="chrome-counter">5 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+      <div><h4>Stage 2: Authorization</h4><h2>Issuer approval / decline</h2></div>
+      <div class="flow-row" style="width:400px;flex-shrink:0;">
+        <div class="flow-box">Submit</div><div class="flow-arrow">→</div>
+        <div class="flow-box active">Authorize</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authenticate</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Clear</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Settle</div>
+      </div>
+    </div>
+    <table class="ptable">
+      <thead><tr><th>#</th><th>Company</th><th>PayFac Role</th><th>Top 3 Capabilities</th><th>Client Fit</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr class="top-pick">
+          <td class="rank">1</td>
+          <td><strong>Stripe</strong><br><span style="font-size:10px;color:var(--muted);">Adaptive Acceptance</span></td>
+          <td><span class="tag tag-phase1" style="font-size:10px;">Near-Term</span></td>
+          <td><ul class="cap-list"><li>Adaptive acceptance + smart retries boost auth rates</li><li>Stripe Radar fraud scoring applied at authorization</li><li>Real-time decline codes + dashboard visibility</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">SaaS, marketplaces. KidSync fits well at launch.</td>
+          <td class="fit-ex">Excellent Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><strong>Adyen</strong><br><span style="font-size:10px;color:var(--muted);">RevenueAccelerate</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Near / Long-Term</span></td>
+          <td><ul class="cap-list"><li>Direct network connections = stronger auth optimization</li><li>RevenueAccelerate: ML-based routing + retry logic</li><li>Network token uplift improves authorization rates</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms. KidSync fits at scale.</td>
+          <td class="fit-good">Good Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><strong>J.P. Morgan Payments</strong><br><span style="font-size:10px;color:var(--muted);">WePay / Chase</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Long-Term Infra</span></td>
+          <td><ul class="cap-list"><li>Direct issuer + acquirer = highest auth rates at volume</li><li>Lowest interchange on Chase-issued cards at scale</li><li>Embedded banking infrastructure (accounts, cards)</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Large enterprise. KidSync fits long-term, not at launch.</td>
+          <td class="fit-longterm">Long-Term Infra</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 6: Authentication -->
+<div class="slide" data-slide="6">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync: Stage 3 - Authentication</div></div></div>
+    <div class="chrome-counter">6 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+      <div><h4>Stage 3: Authentication</h4><h2>Cardholder verification + 3DS</h2></div>
+      <div class="flow-row" style="width:400px;flex-shrink:0;">
+        <div class="flow-box">Submit</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authorize</div><div class="flow-arrow">→</div>
+        <div class="flow-box active">Authenticate</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Clear</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Settle</div>
+      </div>
+    </div>
+    <table class="ptable">
+      <thead><tr><th>#</th><th>Company</th><th>PayFac Role</th><th>Top 3 Capabilities</th><th>Client Fit</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr class="top-pick">
+          <td class="rank">1</td>
+          <td><strong>Stripe</strong><br><span style="font-size:10px;color:var(--muted);">3DS2 + Radar</span></td>
+          <td><span class="tag tag-phase1" style="font-size:10px;">Near-Term</span></td>
+          <td><ul class="cap-list"><li>Automatic EMV 3DS2 via Stripe.js, requiring no extra dev work</li><li>SCA-compliant + automatic exemption handling</li><li>Stripe Radar fraud scoring bundled at authentication</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">SaaS, marketplaces. KidSync fits at launch.</td>
+          <td class="fit-ex">Excellent Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><strong>Adyen</strong><br><span style="font-size:10px;color:var(--muted);">Platform 3DS Controls</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Near / Long-Term</span></td>
+          <td><ul class="cap-list"><li>Granular 3DS exemption control at the platform level</li><li>Authentication-only flows (3DS without authorization)</li><li>Platform-level risk controls as KidSync matures toward PayFac</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms. KidSync fits at scale.</td>
+          <td class="fit-good">Good Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><strong>Visa / MC / Amex</strong><br><span style="font-size:10px;color:var(--muted);">Visa Secure · MC Identity Check · SafeKey</span></td>
+          <td><span class="tag tag-muted" style="font-size:10px;">Ecosystem</span></td>
+          <td><ul class="cap-list"><li>Define the 3DS protocols KidSync must comply with</li><li>Liability shift protection for authenticated transactions</li><li>Implemented through your processor and not a direct partner choice</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">All issuers and merchants. KidSync must comply.</td>
+          <td class="fit-eco">Ecosystem Context</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card card-warn" style="padding:9px 14px;"><p style="font-size:11px;"><strong>Key distinction:</strong> 3DS (Visa Secure, MC Identity Check, Amex SafeKey) is cardholder authentication. Fraud/risk tooling (Stripe Radar, Sardine, Feedzai) is a separate, independently owned layer. Do not conflate the two.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Clearing -->
+<div class="slide" data-slide="7">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync: Stage 4 - Clearing</div></div></div>
+    <div class="chrome-counter">7 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+      <div><h4>Stage 4: Clearing</h4><h2>Transaction reconciliation</h2></div>
+      <div class="flow-row" style="width:400px;flex-shrink:0;">
+        <div class="flow-box">Submit</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authorize</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authenticate</div><div class="flow-arrow">→</div>
+        <div class="flow-box active">Clear</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Settle</div>
+      </div>
+    </div>
+    <table class="ptable">
+      <thead><tr><th>#</th><th>Company</th><th>PayFac Role</th><th>Top 3 Capabilities</th><th>Client Fit</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr class="top-pick">
+          <td class="rank">1</td>
+          <td><strong>Adyen</strong><br><span style="font-size:10px;color:var(--muted);">Adyen for Platforms</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Near / Long-Term</span></td>
+          <td><ul class="cap-list"><li>Platform-level batch clearing + reconciliation in one system</li><li>Direct network connections reduce clearing hops and cost</li><li>Unified clearing, settlement, and reporting for platforms</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms. KidSync fits as it scales.</td>
+          <td class="fit-good">Good Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><strong>Fiserv</strong><br><span style="font-size:10px;color:var(--muted);">Clover / First Data</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Long-Term Infra</span></td>
+          <td><ul class="cap-list"><li>One of the largest global clearing + reconciliation providers</li><li>Powers banks, processors, and enterprise payment platforms</li><li>Full clearing stack: card, ACH, NACHA</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Banks and enterprise processors. KidSync fits long-term.</td>
+          <td class="fit-longterm">Long-Term Infra</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><strong>Global Payments / Worldpay</strong><br><span style="font-size:10px;color:var(--muted);">Combined entity Jan 2026</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Long-Term Infra</span></td>
+          <td><ul class="cap-list"><li>Global scale clearing infrastructure post-merger (Jan 2026)</li><li>Direct network clearing relationships at enterprise volume</li><li>PayFac and platform clearing services available</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms globally. KidSync fits long-term.</td>
+          <td class="fit-longterm">Long-Term Infra</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card" style="padding:9px 14px;"><p style="font-size:11px;"><strong>Distinction:</strong> Visa, Mastercard, and Amex handle network-level clearing (net position calculation between issuers and acquirers). The vendors above handle processor/platform-level batch processing and reconciliation, which is the clearing layer KidSync can influence as a PayFac.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 8: Settlement -->
+<div class="slide" data-slide="8">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync: Stage 5 - Settlement</div></div></div>
+    <div class="chrome-counter">8 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;">
+      <div><h4>Stage 5: Settlement</h4><h2>Funds movement + payouts</h2></div>
+      <div class="flow-row" style="width:400px;flex-shrink:0;">
+        <div class="flow-box">Submit</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authorize</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Authenticate</div><div class="flow-arrow">→</div>
+        <div class="flow-box">Clear</div><div class="flow-arrow">→</div>
+        <div class="flow-box active">Settle</div>
+      </div>
+    </div>
+    <table class="ptable">
+      <thead><tr><th>#</th><th>Company</th><th>PayFac Role</th><th>Top 3 Capabilities</th><th>Client Fit</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr class="top-pick">
+          <td class="rank">1</td>
+          <td><strong>Stripe Connect</strong><br><span style="font-size:10px;color:var(--muted);">Express / Custom Accounts</span></td>
+          <td><span class="tag tag-phase1" style="font-size:10px;">Near-Term</span></td>
+          <td><ul class="cap-list"><li>Sub-merchant payouts, platform fees, split payments</li><li>Rolling reserve management + 1099 reporting</li><li>Express/Custom accounts for provider onboarding</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Marketplaces, platforms. KidSync fits well at launch.</td>
+          <td class="fit-ex">Excellent Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td><strong>Adyen for Platforms</strong><br><span style="font-size:10px;color:var(--muted);">Split Settlement</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Near / Long-Term</span></td>
+          <td><ul class="cap-list"><li>Advanced split settlement rules + reserve control</li><li>Real-time settlement visibility + MOR options</li><li>Global payouts, multi-currency, direct acquiring</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Enterprise platforms. KidSync fits as it scales.</td>
+          <td class="fit-good">Good Fit</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td><strong>J.P. Morgan Payments</strong><br><span style="font-size:10px;color:var(--muted);">WePay + Chase Banking</span></td>
+          <td><span class="tag tag-longterm" style="font-size:10px;">Long-Term Infra</span></td>
+          <td><ul class="cap-list"><li>Direct bank + acquirer = fastest settlement timing at scale</li><li>Lowest total settlement cost via direct relationships</li><li>Embedded banking: accounts, cards, working capital</li></ul></td>
+          <td style="font-size:11px;color:var(--muted);">Large enterprise. KidSync fits long-term, not at launch.</td>
+          <td class="fit-longterm">Long-Term Infra</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card card-accent" style="padding:9px 14px;"><p style="font-size:11px;"><strong>PayFac note:</strong> Settlement is where PayFac context matters most. Whoever controls settlement owns the payment relationship and the margin. Stripe Connect validates the model; Adyen bridges to enterprise; J.P. Morgan is the long-term direct path.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 9: Best Fit by Stage -->
+<div class="slide" data-slide="9">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Best Fit by Stage</div></div></div>
+    <div class="chrome-counter">9 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div><h4>Summary</h4><h2>Best fit vendors by payment stage</h2></div>
+    <table class="ptable">
+      <thead><tr><th>Stage</th><th>Best Near-Term Fit</th><th>Best Long-Term Fit</th><th>Key Reason</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Submission</strong><br><span style="font-size:10px;color:var(--muted);">Card capture + tokenization</span></td>
+          <td class="fit-ex">Stripe</td>
+          <td class="fit-longterm">Adyen</td>
+          <td style="font-size:11px;color:var(--muted);">Developer ecosystem near-term → network tokenization + platform infra long-term</td>
+        </tr>
+        <tr>
+          <td><strong>Authorization</strong><br><span style="font-size:10px;color:var(--muted);">Issuer approval / decline</span></td>
+          <td class="fit-ex">Stripe</td>
+          <td class="fit-longterm">J.P. Morgan Payments</td>
+          <td style="font-size:11px;color:var(--muted);">Auth optimization near-term → direct acquirer / issuer relationship at scale</td>
+        </tr>
+        <tr>
+          <td><strong>Authentication</strong><br><span style="font-size:10px;color:var(--muted);">Cardholder 3DS</span></td>
+          <td class="fit-ex">Stripe</td>
+          <td class="fit-good">Adyen</td>
+          <td style="font-size:11px;color:var(--muted);">Automatic 3DS2 near-term → granular platform-level 3DS controls at scale</td>
+        </tr>
+        <tr>
+          <td><strong>Clearing</strong><br><span style="font-size:10px;color:var(--muted);">Transaction reconciliation</span></td>
+          <td class="fit-good">Adyen</td>
+          <td class="fit-longterm">Fiserv / Global Payments</td>
+          <td style="font-size:11px;color:var(--muted);">Platform clearing near-term → enterprise clearing infrastructure long-term</td>
+        </tr>
+        <tr>
+          <td><strong>Settlement</strong><br><span style="font-size:10px;color:var(--muted);">Funds movement + payouts</span></td>
+          <td class="fit-ex">Stripe Connect</td>
+          <td class="fit-longterm">Adyen → J.P. Morgan</td>
+          <td style="font-size:11px;color:var(--muted);">Managed payouts near-term → direct PayFac settlement infrastructure long-term</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card" style="padding:9px 14px;"><p style="font-size:11px;">Near-term = strongest fit for KidSync's current stage. Long-term = most relevant as KidSync builds toward sponsored PayFac or full PayFac. Adyen is notably strong across both; it spans near-term usability and long-term infrastructure in most stages.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 10: Vendor Fit Categories -->
+<div class="slide" data-slide="10">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Vendor Fit Categories</div></div></div>
+    <div class="chrome-counter">10 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div><h4>Classification</h4><h2>How each vendor fits the KidSync PayFac path</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="card card-accent">
+        <h4 style="color:var(--accent);margin-bottom:6px;">Near-Term Platform / Payment Partner</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Stripe · Stripe Connect</p>
+        <p style="font-size:11px;">Best developer ecosystem, marketplace payouts, 1099s, rolling reserves. Validates the PayFac model without full compliance burden.</p>
+      </div>
+      <div class="card card-emma">
+        <h4 style="color:var(--emma);margin-bottom:6px;">Near-Term / Bridge Platform (Enterprise)</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Adyen · Adyen for Platforms</p>
+        <p style="font-size:11px;">Strongest cross-stage coverage. Platform tokenization, clearing, settlement, 3DS controls. Enterprise minimums. Evaluate if volume justifies.</p>
+      </div>
+      <div class="card card-warn">
+        <h4 style="color:var(--warn);margin-bottom:6px;">Parent Trust / Wallet Option: Validate First</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Braintree (PayPal)</p>
+        <p style="font-size:11px;">PayPal + Venmo wallet is a real parent trust signal. Marketplace recurring billing and chargeback model must be validated before committing.</p>
+      </div>
+      <div class="card card-ai">
+        <h4 style="color:var(--ai);margin-bottom:6px;">Long-Term Processor / Acquirer Infrastructure</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">J.P. Morgan Payments · Fiserv · Global Payments / Worldpay</p>
+        <p style="font-size:11px;">Critical infrastructure as volume grows. Direct acquirer relationships, lowest cost at scale, enterprise clearing. Not practical at launch.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:6px;">Core Network Context</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Visa · Mastercard · American Express</p>
+        <p style="font-size:11px;">Define 3DS protocols, interchange rates, and compliance rules. Compliance context only, not a direct partner choice for KidSync.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:6px;">In-Person Consideration (Optional)</h4>
+        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Square</p>
+        <p style="font-size:11px;">Only relevant if KidSync needs on-site provider payments (e.g., camp registration desks). Closed ecosystem with limited PayFac or marketplace pathway.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11: Minimums & Requirements -->
+<div class="slide" data-slide="11">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Minimums &amp; Requirements</div></div></div>
+    <div class="chrome-counter">11 / 12</div>
+  </div>
+  <div class="slide-body">
+    <div><h4>Minimums &amp; Requirements</h4><h2>Known fees, floors, and terms by vendor</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+
+      <div class="card card-accent" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">Stripe Connect</strong>
+          <span class="tag tag-phase1" style="font-size:9px;">Near-Term</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">No monthly minimum or processing volume floor</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">$2/mo per active connected account; 0.25% + $0.25 per payout to sub-merchants</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Month-to-month; no ETF; T+2 card settlement; platforms can delay payouts up to 31 days</li>
+        </ul>
+      </div>
+
+      <div class="card card-emma" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">Adyen for Platforms</strong>
+          <span class="tag tag-longterm" style="font-size:9px;">Near / Long-Term</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">~$1,100/mo minimum invoice floor (regardless of volume); reserves negotiated per contract</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">~$500K+/mo processing volume to onboard (reported, not publicly stated)</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">60-day cancellation notice; no ETF; T+2 settlement; strict 0.5% chargeback threshold</li>
+        </ul>
+      </div>
+
+      <div class="card card-warn" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">Braintree (PayPal)</strong>
+          <span class="tag tag-warn" style="font-size:9px;">Validate First</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">No monthly fee or volume minimum; cards 2.89% + $0.29 per transaction</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Marketplace is US-only, requires sales approval, and is incompatible with PayPal wallet and most recurring billing</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Rolling reserves 5-10%, held 45-90 days; T+2 ACH; up to 21-day hold for new accounts</li>
+        </ul>
+      </div>
+
+      <div class="card card-ai" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">J.P. Morgan Payments</strong>
+          <span class="tag tag-muted" style="font-size:9px;">Long-Term</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">All fees, minimums, and contract terms not publicly disclosed</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Enterprise-only; requires direct sales and underwriting engagement; API currently in beta</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Same-day settlement available via WePay/Chase infrastructure</li>
+        </ul>
+      </div>
+
+      <div class="card" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">Fiserv (Carat)</strong>
+          <span class="tag tag-muted" style="font-size:9px;">Long-Term</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Standard: $197/mo inactivity fee; $95-120/yr annual fee; ~$60/mo PCI fee</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Carat/PayFac-as-a-Service fees not publicly disclosed; enterprise volume implied</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Standard contracts: 3-year; ETF = 80% of avg monthly fees x remaining months</li>
+        </ul>
+      </div>
+
+      <div class="card" style="padding:12px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:13px;">Global Payments / Worldpay</strong>
+          <span class="tag tag-muted" style="font-size:9px;">Long-Term</span>
+        </div>
+        <ul style="margin:0;padding-left:14px;">
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Standard: $35/mo processing minimum; $50-100/mo account fee; $20-79/mo PCI fee</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Platform (Payrix Pro) fees not disclosed; AmEx direct conversion at $1M/yr or $100K in any 3 consecutive months</li>
+          <li style="font-size:11px;color:var(--muted);line-height:1.65;">Standard: 3-year contract; ETF $295-495/location; T+1 cards; same-day available with underwriting approval</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="card" style="padding:8px 14px;"><p style="font-size:11px;">Stripe Connect is the only provider with fully public pricing. All platform and PayFac-as-a-Service terms for Adyen, J.P. Morgan, Fiserv, and Global Payments/Worldpay require direct sales engagement. Validate all figures before committing.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 12: Final Takeaway -->
+<div class="slide" data-slide="12">
+  <div class="slide-chrome">
+    <div class="chrome-brand"><div class="chrome-logo">K</div><div><div class="chrome-title">KidSync · Final Takeaway</div></div></div>
+    <div class="chrome-counter">12 / 12</div>
+  </div>
+  <div class="slide-body two-col">
+    <div class="col">
+      <h4>Conclusions</h4>
+      <h2>PayFac Analysis</h2>
+      <div class="card card-accent" style="margin-top:4px;">
+        <h3 style="color:var(--accent);margin-bottom:6px;">Strongest near-term fit</h3>
+        <p style="font-size:12px;">Stripe + Stripe Connect: best developer ecosystem, marketplace payouts, 1099s, reserves. Validates PayFac model without full compliance burden.</p>
+      </div>
+      <div class="card card-emma" style="margin-top:0;">
+        <h3 style="color:var(--emma);margin-bottom:6px;">Strong enterprise candidate</h3>
+        <p style="font-size:12px;">Adyen for Platforms: strongest cross-stage coverage for a company building toward PayFac. Evaluate in parallel if volume and enterprise readiness justify.</p>
+      </div>
+      <div class="card card-ai" style="margin-top:0;">
+        <h3 style="color:var(--ai);margin-bottom:6px;">Long-term infrastructure candidates</h3>
+        <p style="font-size:12px;">J.P. Morgan Payments, Fiserv, Global Payments/Worldpay are relevant as KidSync proves volume and builds toward direct processor relationships. Not day-one decisions.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Suggested Next Steps</h4>
+      <div class="checklist" style="margin-top:4px;">
+        <div class="check-item"><span class="check-icon">→</span>Validate Stripe Connect terms for marketplace payments, recurring billing, and sub-merchant onboarding before committing.</div>
+        <div class="check-item"><span class="check-icon">→</span>Request an Adyen for Platforms proposal for comparison. Confirm volume minimums and pricing tier.</div>
+        <div class="check-item"><span class="check-icon">→</span>Clarify KidSync's merchant-of-record model: does KidSync take payment liability, or do individual providers?</div>
+        <div class="check-item"><span class="check-icon">→</span>Validate Braintree marketplace and recurring billing compatibility if PayPal/Venmo wallet is a priority.</div>
+        <div class="check-item"><span class="check-icon warn">!</span>Defer J.P. Morgan Payments, Fiserv, and Global Payments/Worldpay conversations until processing volume justifies the enterprise relationship.</div>
+        <div class="check-item"><span class="check-icon warn">!</span>All long-term vendor terms should be validated directly. Do not treat this analysis as final pricing or contract terms.</div>
+      </div>
+      <div class="quote-block" style="margin-top:4px;">
+        <p>"Start with Stripe Connect to prove the model. Run a parallel Adyen evaluation for enterprise scale. Treat J.P. Morgan Payments and Fiserv as the long-term infrastructure roadmap, not day-one decisions."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- .deck -->
+
+<nav class="nav">
+  <button onclick="goTo(current-1)">&#8592;</button>
+  <div class="nav-dots" id="dots"></div>
+  <button onclick="goTo(current+1)">&#8594;</button>
+  <span class="nav-label" id="label">1 / 12</span>
+</nav>
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+const dotsEl = document.getElementById('dots');
+const labelEl = document.getElementById('label');
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'nav-dot' + (i === 0 ? ' on' : '');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+}
+function goTo(n) {
+  slides[current].classList.remove('active');
+  dotsEl.children[current].classList.remove('on');
+  current = (n + total) % total;
+  slides[current].classList.add('active');
+  dotsEl.children[current].classList.add('on');
+  labelEl.textContent = (current + 1) + ' / ' + total;
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+});
+</script>
+</body>
+</html>
